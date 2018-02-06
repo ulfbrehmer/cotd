@@ -128,8 +128,24 @@ class Inventory extends React.Component {
             </div>
         )
     }
+
+    // Just to try Wes Bos tip of trying a new ES2017 feature, 
+    // use a property initialiser inside the component instead 
+    // of a static definition outside
+    static propTypes = {
+        fishes: React.PropTypes.object.isRequired,
+        updateFish: React.PropTypes.func.isRequired,
+        addFish: React.PropTypes.func.isRequired,
+        removeFish: React.PropTypes.func.isRequired,
+        loadSamples: React.PropTypes.func.isRequired,
+        storeId: React.PropTypes.string.isRequired
+    }
 }
 
+// Just to try Wes Bos tip of trying a new ES2017 feature, 
+// use a property initialiser inside the component instead 
+// of this static definition outside
+/*
 Inventory.propTypes = {
     fishes: React.PropTypes.object.isRequired,
     updateFish: React.PropTypes.func.isRequired,
@@ -138,5 +154,6 @@ Inventory.propTypes = {
     loadSamples: React.PropTypes.func.isRequired,
     storeId: React.PropTypes.string.isRequired
 }
+*/
 
 export default Inventory

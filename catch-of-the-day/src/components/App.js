@@ -12,15 +12,24 @@ class App extends React.Component {
         this.addFish = this.addFish.bind(this)
         this.updateFish = this.updateFish.bind(this)
         this.removeFish = this.removeFish.bind(this)
-        this.loadSamples = this.loadSamples.bind(this)
+        // Just to try Wes Bos tip of trying a new ES2017 feature, 
+        // use a property initialiser instead of this constructor bind
+        //this.loadSamples = this.loadSamples.bind(this)
         this.addToOrder = this.addToOrder.bind(this)
         this.removeFromOrder = this.removeFromOrder.bind(this)
 
         // getInitialState
-        this.state = {
-            fishes: {},
-            order: {}
-        }
+        //this.state = {
+        //    fishes: {},
+        //    order: {}
+        //}
+    }
+
+    // Just to try Wes Bos tip of trying a new ES2017 feature, 
+    // use a property initialiser instead of inside the constructor
+    state = {
+        fishes: {},
+        order: {}
     }
 
     componentWillMount() {
@@ -70,7 +79,9 @@ class App extends React.Component {
         this.setState({ fishes })      
     }
 
-    loadSamples() {
+    // Just to try Wes Bos tip of trying a new ES2017 feature, 
+    // use a property initialiser instead of a constructor bind
+    loadSamples = () => {
         this.setState({
             fishes: sampleFishes
         })
